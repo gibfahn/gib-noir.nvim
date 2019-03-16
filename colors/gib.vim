@@ -16,6 +16,8 @@
 "
 " Run this to show all colors currently set.
 "   :so $VIMRUNTIME/syntax/hitest.vim
+"
+" You can set cterm=undercurl,italic for multiple options.
 
 highlight clear
 set background=dark
@@ -102,6 +104,7 @@ if &t_Co > 255
   highlight WildMenu        ctermfg=0       ctermbg=80      cterm=none
   highlight Folded          ctermfg=103     ctermbg=234     cterm=none
   highlight FoldColumn      ctermfg=103     ctermbg=234     cterm=none
+  " Used by gitgutter (I think)
   highlight DiffAdd         ctermfg=none    ctermbg=23      cterm=none
   highlight DiffChange      ctermfg=none    ctermbg=56      cterm=none
   highlight DiffDelete      ctermfg=168     ctermbg=96      cterm=none
@@ -133,17 +136,31 @@ if &t_Co > 255
   highlight Function        ctermfg=114     ctermbg=none    cterm=none
   highlight htmlEndTag      ctermfg=114     ctermbg=none    cterm=none
   highlight xmlEndTag       ctermfg=114     ctermbg=none    cterm=none
-  highlight ErrorMsg        ctermfg=168     ctermbg=none    cterm=bold
   highlight Search          ctermfg=208     ctermbg=none    cterm=bold | " After search.
   highlight MoreMsg         ctermfg=121     ctermbg=none    cterm=bold
   highlight ModeMsg         ctermfg=254     ctermbg=none    cterm=bold
   highlight CursorLineNr    ctermfg=254     ctermbg=236     cterm=bold
   highlight Question        ctermfg=80      ctermbg=none    cterm=bold
-  highlight WarningMsg      ctermfg=206     ctermbg=none    cterm=bold
+  " LanguageClient inline messages.
+  highlight ErrorMsg        ctermfg=168     ctermbg=none    cterm=italic
+  highlight WarningMsg      ctermfg=130     ctermbg=none    cterm=italic
+  highlight InfoMsg         ctermfg=180     ctermbg=none    cterm=italic
+  highlight HintMsg         ctermfg=192     ctermbg=none    cterm=italic
+  " LanguageClient in gutter message indicators.
+  highlight ErrorSign       ctermfg=196     ctermbg=235    cterm=italic
+  highlight WarningSign     ctermfg=202     ctermbg=235    cterm=italic
+  highlight InfoSign        ctermfg=226     ctermbg=235    cterm=italic
+  highlight HintSign        ctermfg=226     ctermbg=235    cterm=italic
+  " LanguageClient text that has errors/warnings/etc.
+  highlight ErrorText       ctermfg=none    ctermbg=none    cterm=undercurl
+  highlight WarningText     ctermfg=none    ctermbg=none    cterm=undercurl
+  highlight InfoText        ctermfg=none    ctermbg=none    cterm=undercurl
+  highlight HintText        ctermfg=none    ctermbg=none    cterm=undercurl
+
   highlight Statement       ctermfg=168     ctermbg=none    cterm=bold
   highlight Type            ctermfg=141     ctermbg=none    cterm=bold
-  highlight Error           ctermfg=168     ctermbg=none    cterm=bold
-  highlight Todo            ctermfg=80      ctermbg=none    cterm=bold
+  highlight Error           ctermfg=168     ctermbg=none    cterm=bold | " LanguageClient Errors
+  highlight Todo            ctermfg=80      ctermbg=none    cterm=bold | " Todos and LanguageClient Warnings.
   highlight Keyword         ctermfg=168     ctermbg=none    cterm=bold
   highlight Title           ctermfg=141     ctermbg=none    cterm=bold
   highlight MatchParen      ctermfg=255     ctermbg=198     cterm=bold
