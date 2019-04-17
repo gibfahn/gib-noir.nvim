@@ -108,7 +108,7 @@ highlight WarningSign     guifg=#EE692C     guibg=NONE    gui=italic
 highlight InfoSign        guifg=#FFFD54     guibg=NONE    gui=italic
 highlight HintSign        guifg=#FFFD54     guibg=NONE    gui=italic
 " " LanguageClient text that has errors/warnings/etc.
-highlight ErrorText       guifg=NONE    guibg=NONE    gui=undercurl
+highlight ErrorText       guifg=NONE    guibg=#B25E79    gui=undercurl
 highlight WarningText     guifg=NONE    guibg=NONE    gui=undercurl
 highlight InfoText        guifg=NONE    guibg=NONE    gui=undercurl
 highlight HintText        guifg=NONE    guibg=NONE    gui=undercurl
@@ -116,6 +116,17 @@ highlight HintText        guifg=NONE    guibg=NONE    gui=undercurl
 highlight Error           guifg=#d96e8a    guibg=NONE       gui=bold
 " Todos and LanguageClient warnings.
 highlight Todo            guifg=#75d7d8    guibg=NONE       gui=bold
+
+" Link Coc-specific highlights to general ones.
+highlight link CocErrorSign ErrorSign
+highlight link CocWarningSign WarningSign
+highlight link CocInfoSign InfoSign
+highlight link CocHintSign HintSign
+
+highlight link CocErrorHighlight ErrorText
+highlight link CocWarningHighlight WarningText
+highlight link CocInfoHighlight InfoText
+highlight link CocHintHighlight HintText
 
 highlight Keyword         guifg=#d96e8a    guibg=NONE       gui=bold
 highlight Title           guifg=#a080ea    guibg=NONE       gui=bold
