@@ -51,13 +51,15 @@ highlight WildMenu        guifg=#000000    guibg=#75d7d8    gui=NONE
 highlight Folded          guifg=#8787af    guibg=#242322    gui=NONE
 highlight FoldColumn      guifg=#8787af    guibg=#242322    gui=NONE
 
-" Gitgutter added lines
-highlight DiffAdd         guifg=#88da77       guibg=#005154    gui=NONE
-" Gitgutter changed lines
-highlight DiffChange      guifg=#8CD5D7       guibg=#4f3598    gui=NONE
-" GitGutter deleted lines
-highlight DiffDelete      guifg=#d96e8a    guibg=#72323f    gui=NONE
-highlight DiffText        guifg=#000000    guibg=#75d7d8    gui=NONE
+" Diff highlighting, no guifg to preserve syntax highlighting in diff blocks.
+" Gitgutter/vimdiff added lines
+highlight DiffAdd         guifg=NONE       guibg=#062905    gui=NONE
+" Gitgutter/vimdiff changed lines (unchanged text).
+highlight DiffChange      guifg=NONE       guibg=#1d3e42    gui=NONE
+" GitGutter/vimdiff deleted lines
+highlight DiffDelete      guifg=NONE       guibg=#3d0c0a    gui=NONE
+" GitGutter/vimdiff changed lines (changed text).
+highlight DiffText        guifg=NONE       guibg=#472346    gui=NONE
 
 highlight SignColumn      guifg=#808080    guibg=#2e2d2b    gui=NONE
 highlight Conceal         guifg=#c6c6c6    guibg=NONE       gui=NONE
