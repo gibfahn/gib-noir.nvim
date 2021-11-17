@@ -110,7 +110,7 @@ highlight WarningSign     guifg=#EE692C     guibg=NONE    gui=italic
 highlight InfoSign        guifg=#FFFD54     guibg=NONE    gui=italic
 highlight HintSign        guifg=#FFFD54     guibg=NONE    gui=italic
 " " LanguageClient text that has errors/warnings/etc.
-highlight ErrorText       guifg=NONE    guibg=#B25E79    gui=undercurl
+highlight ErrorText       guifg=NONE    guibg=#1e070e    gui=undercurl
 highlight WarningText     guifg=NONE    guibg=NONE    gui=undercurl
 highlight InfoText        guifg=NONE    guibg=NONE    gui=undercurl
 highlight HintText        guifg=NONE    guibg=NONE    gui=undercurl
