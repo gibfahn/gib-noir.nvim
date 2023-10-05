@@ -109,10 +109,10 @@ local highlights = {
   CocWarningHighlight = { link = "WarningText" },
   CocInfoHighlight = { link = "InfoText" },
   CocHintHighlight = { link = "HintText" },
-  -- https://github.com/ggandor/leap.nvim: the background color when searching.
-  LeapBackdrop = { fg = '#707070' },
-  -- https://github.com/folke/flash.nvim: the background color when searching.
-  FlashBackdrop = { fg = '#707070' },
+  -- https://github.com/folke/flash.nvim: the background color when searching (grey everything out).
+  FlashBackdrop = { fg = "#545c7e" },
+  -- https://github.com/folke/flash.nvim: the label color when searching (find the letter you want to type to jump).
+  FlashLabel = { bg = "#ff007c", fg = "#c0caf5", bold = true, },
 }
 
 for group, colors in pairs(highlights) do
