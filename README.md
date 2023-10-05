@@ -1,3 +1,3 @@
-# vim-gib
+# gib-noir
 
-The Vim color scheme I use. Supports 256-color terminals and GUI Vim.
+The Neovim color scheme I use. Supports 256-color terminals and GUI Neovim.
