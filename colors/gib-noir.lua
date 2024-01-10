@@ -3,7 +3,6 @@
 
 vim.opt.background = 'dark'
 vim.g.colors_name = 'gib-noir'
-vim.cmd("highlight clear")
 
 local highlights = {
   -- Normal text (and default background color).
