@@ -1,6 +1,11 @@
 -- Run this to show all colors currently set.
 --   :so $VIMRUNTIME/syntax/hitest.vim
 
+-- Clear existing colors if a colorscheme is already loaded.
+if vim.g.colors_name then
+  vim.cmd("highlight clear")
+end
+
 vim.opt.background = 'dark'
 vim.g.colors_name = 'gib-noir'
 
