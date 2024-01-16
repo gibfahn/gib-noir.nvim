@@ -68,7 +68,7 @@ local c = {
   error2 = "#d96e8a",
   info = "#dbc570",
   hint = "#8cd991",
-  flash_inactive = "#A56221",
+  flash_inactive = "#545c7e",
 }
 
 local highlights = {
@@ -102,8 +102,8 @@ local highlights = {
   FoldColumn                = { link = "Folded" },                                       -- 'foldcolumn'
   SignColumn                = { link = "FoldColumn" },                                   -- column where |signs| are displayed
   IncSearch                 = { fg = c.bg, bg = c.pink },                                -- 'incsearch' highlighting (Next match of text you're searching for as you type the search term) also used for the text replaced with ":s///c"
-  Substitute                = { fg = c.search, bold = true },                            -- |:substitute| replacement text highlighting
-  LineNr                    = { fg = c.comment, bg = c.folded },                         -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+  Substitute                = { fg = c.bg_dark_highlight, bg = c.search },               -- |:substitute| replacement text highlighting
+  LineNr                    = { fg = c.comment, bg = c.bg_folded },                      -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
   LineNrAbove               = { link = "LineNr" },                                       -- Line number for when the 'relativenumber' option is set, above the cursor line
   LineNrBelow               = { link = "LineNr" },                                       -- Line number for when the 'relativenumber' option is set, below the cursor line
   CursorLineNr              = { fg = c.fg_highlight, bg = c.bg_highlight, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -131,7 +131,7 @@ local highlights = {
   PmenuSbar                 = { fg = c.pink, bg = c.bg_scrollbar },                             -- Popup menu: scrollbar.
   PmenuThumb                = { fg = c.bg_gutter, bg = c.pink },                                -- Popup menu: Thumb of the scrollbar.
   Question                  = { fg = c.question, bold = true },                                 -- |hit-enter| prompt and yes/no questions
-  QuickFixLine              = { fg = c.fg_cursearch, bg = c.bg_quickfix },                      -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+  QuickFixLine              = { bg = c.bg_highlight },                                          -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
   Search                    = { fg = c.search, bold = true },                                   -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
   SpecialKey                = { fg = c.non_text },                                              -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
   SpellBad                  = { sp = c.error2, undercurl = true },                              -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
