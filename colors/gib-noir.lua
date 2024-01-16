@@ -100,7 +100,7 @@ local highlights = {
   WinSeparator              = { fg = c.border, bold = true },                            -- the column separating vertically split windows
   Folded                    = { fg = c.fg_gutter, bg = c.bg_folded },                    -- line used for closed folds
   FoldColumn                = { link = "Folded" },                                       -- 'foldcolumn'
-  SignColumn                = { fg = c.comment, bg = c.bg_gutter },                      -- column where |signs| are displayed
+  SignColumn                = { link = "FoldColumn" },                                   -- column where |signs| are displayed
   IncSearch                 = { fg = c.bg, bg = c.pink },                                -- 'incsearch' highlighting (Next match of text you're searching for as you type the search term) also used for the text replaced with ":s///c"
   Substitute                = { fg = c.search, bold = true },                            -- |:substitute| replacement text highlighting
   LineNr                    = { fg = c.comment, bg = c.folded },                         -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
