@@ -43,6 +43,7 @@ local c = {
   bg_quickfix = "#5f87af",
   non_text = "#7eaefd", -- Non-text chars like ~ after end of buffer, or trailing whitespace.
   pink = "#ff5fd7",
+  purple = "#9d7cd8",
   search = "#ff8901",
   cursor = "#6BF549",
   constant = "#e6987a",
@@ -69,6 +70,7 @@ local c = {
   info = "#dbc570",
   hint = "#8cd991",
   flash_inactive = "#545c7e",
+  blue1 = "#2ac3de",
 }
 
 local highlights = {
@@ -112,9 +114,9 @@ local highlights = {
   MatchParen = { fg = c.fg, bg = c.match_paren, bold = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
   ModeMsg = { fg = c.fg_highlight, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
   -- MsgArea = { }, -- Area for messages and cmdline
-  MsgSeparator = { fg = c.bg, bg = c.selected }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+  MsgSeparator = { fg = c.bg, bg = c.bg_selected }, -- Separator for scrolled messages, `msgsep` flag of 'display'
   MoreMsg = { fg = c.more, bold = true }, -- |more-prompt|
-  NonText = { link = "EndOfBuffer" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+  NonText = { fg = c.bg_visual }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
   Normal = { fg = c.fg, bg = c.bg }, -- Normal text (and default background color).
   NormalFloat = { link = "Pmenu" }, -- Normal text in floating windows.
   FloatBorder = { link = "WinSeparator" },
@@ -163,7 +165,7 @@ local highlights = {
 
   Comment = { fg = c.comment, italic = true }, -- Any comment
   Constant = { fg = "#e6987a", italic = true }, -- (*) Any constant
-  String = { fg = "#ad8788", italic = true }, --   A string constant: "this is a string"
+  String = { fg = "#ad8788", bg = c.bg, italic = true }, --   A string constant: "this is a string"
   -- Character = { }, --   A character constant: 'c', '\n'
   Number = { fg = "#dbc570" }, --   A number constant: 234, 0xff
   -- Boolean   = { }, --   A boolean constant: TRUE, false
@@ -345,6 +347,93 @@ local highlights = {
   BufTabLineModifiedCurrent = { link = "BufTabLineCurrent" }, -- (Same as linked but 'modified')
   BufTabLineModifiedActive = { link = "BufTabLineActive" }, -- (Same as linked but 'modified')
   BufTabLineModifiedHidden = { link = "BufTabLineHidden" }, -- (Same as linked but 'modified')
+
+  -- -- BufferLine
+  -- -- <https://github.com/akinsho/bufferline.nvim/blob/e48ce1805697e4bb97bc171c081e849a65859244/doc/bufferline.txt#L764>
+  -- Groups are made by taking highlights, converting snake_case -> UpperCamelCase, then prefixing BufferLine.
+  -- Visible here means the buffer is open in anothes split. Selected means it is open in the current split. Inactive means not open.
+  BufferLineFill = { link = "Tabline" }, -- unused bufferline space on right.
+  BufferLineBackground = { link = "TabLine" }, -- inactive buffers.
+  BufferLineTab = { link = "TabLine" }, -- inactive tabs.
+  BufferLineTabSelected = { link = "TabLineSel" }, -- selected tab
+  BufferLineTabSeparator = { fg = c.bg_folded, bg = c.bg_folded }, -- separator after the non-selected tabs.
+  BufferLineTabSeparatorSelected = { fg = c.bg_folded, bg = c.bg_folded }, -- separator after the selected tab.
+  BufferLineTabClose = { link = "TabLine" }, -- x in corner to close tab.
+  BufferLineCloseButton = { link = "TabLine" }, -- x in corner to close buffer.
+  BufferLineCloseButtonVisible = { link = "PmenuSel" },
+  BufferLineCloseButtonSelected = { link = "TabLineSel" },
+  BufferLineBufferVisible = { link = "PmenuSel" }, -- Main buffer section with title.
+  BufferLineBufferSelected = { link = "TabLineSel" },
+  BufferLineNumbers = { link = "TabLine" }, -- Inactive buffer numbers.
+  BufferLineNumbersVisible = { link = "PmenuSel" },
+  BufferLineNumbersSelected = { link = "TabLineSel" },
+
+  BufferLineDiagnostic = { link = "TabLine" },
+  BufferLineDiagnosticVisible = { link = "PmenuSel" },
+  BufferLineDiagnosticSelected = { link = "TabLineSel" },
+  BufferLineHint = { link = "TabLine" },
+  BufferLineHintVisible = { link = "PmenuSel" },
+  BufferLineHintSelected = { link = "TabLineSel" }, -- Title text when hint shown.
+  BufferLineHintDiagnostic = { fg = c.hint, bg = c.bg_folded },
+  BufferLineHintDiagnosticVisible = { fg = c.hint, bg = c.bg_selected },
+  BufferLineHintDiagnosticSelected = { fg = c.hint, bg = c.non_text },
+  BufferLineInfo = { link = "Tabline" },
+  BufferLineInfoVisible = { link = "PmenuSel" },
+  BufferLineInfoSelected = { link = "TabLineSel" },
+  BufferLineInfoDiagnostic = { fg = c.info, bg = c.bg_folded },
+  BufferLineInfoDiagnosticVisible = { fg = c.info, bg = c.bg_selected },
+  BufferLineInfoDiagnosticSelected = { fg = c.info, bg = c.non_text },
+
+  BufferLineWarning = { link = "TabLine" },
+  BufferLineWarningVisible = { link = "PmenuSel" },
+  BufferLineWarningSelected = { link = "TabLineSel" },
+  BufferLineWarningDiagnostic = { fg = c.warning, bg = c.bg_folded },
+  BufferLineWarningDiagnosticVisible = { fg = c.warning, bg = c.bg_selected },
+  BufferLineWarningDiagnosticSelected = { fg = c.warning, bg = c.non_text },
+  BufferLineError = { link = "Tabline" },
+  BufferLineErrorVisible = { link = "PmenuSel" },
+  BufferLineErrorSelected = { link = "TabLineSel" },
+  BufferLineErrorDiagnostic = { fg = c.error, bg = c.bg_folded },
+  BufferLineErrorDiagnosticVisible = { fg = c.error, bg = c.bg_selected },
+  BufferLineErrorDiagnosticSelected = { fg = c.error, bg = c.non_text },
+
+  BufferLineModified = { link = "TabLine" }, -- Inactive buffer modified • symbol.
+  BufferLineModifiedVisible = { fg = c.bg, bg = c.bg_selected },
+  BufferLineModifiedSelected = { fg = c.bg, bg = c.non_text },
+  BufferLineIndicatorVisible = { link = "PmenuSel" }, -- Left side icon area.
+  BufferLineIndicatorSelected = { link = "TabLineSel" },
+  BufferLineDuplicate = { link = "TabLine" },
+  BufferLineDuplicateVisible = { link = "PmenuSel" },
+  BufferLineDuplicateSelected = { link = "TabLineSel" },
+  -- BufferLinePickSelected = { link = "TabLineSel" },
+  -- BufferLinePickVisible = { link = "PmenuSel" },
+  -- BufferLinePick = { link = "TabLine" },
+  BufferLineSeparatorSelected = { fg = c.bg_folded, bg = c.bg_folded }, -- Buffer separator
+  BufferLineSeparatorVisible = { fg = c.bg_folded, bg = c.bg_folded },
+  BufferLineSeparator = { fg = c.bg_folded, bg = c.bg_folded },
+  -- BufferLineOffsetSeparator = { fg = c.bg_folded, bg = c.bg_folded }, --
+  BufferLineTruncMarker = { link = "PmenuSel" }, -- Buffer not open separator.
+
+  -- Current word highlighting.
+  -- <https://github.com/RRethy/vim-illuminate#highlight-groups>
+  IlluminatedWordText = { bg = c.bg_dark_highlight },
+  IlluminatedWordRead = { bg = c.bg_dark_highlight },
+  IlluminatedWordWrite = { bg = c.bg_dark_highlight },
+
+  -- Indent scope highlighting.
+  -- <https://github.com/echasnovski/mini.nvim/blob/f54410c7f866f51711118fd82274043cf731b63d/doc/mini-indentscope.txt#L55>
+  MiniIndentscopeSymbol = { fg = c.blue1, nocombine = true },
+  MiniIndentscopeSymbolOff = { nocombine = true }, -- Make it invisible
+  MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
+
+  -- https://github.com/nvim-treesitter/nvim-treesitter-context#appearance
+  TreesitterContext = { bg = c.bg_highlight },
+
+  -- <https://github.com/lukas-reineke/indent-blankline.nvim/blob/12e92044d313c54c438bd786d11684c88f6f78cd/doc/indent_blankline.txt#L853>
+  -- IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
+  -- IndentBlanklineContextChar = { fg = c.bg_folded, nocombine = true },
+  IblIndent = { fg = c.folded, nocombine = true },
+  -- IblScope = { fg = c.dark_highlight, nocombine = true },
 }
 
 for group, colors in pairs(highlights) do
