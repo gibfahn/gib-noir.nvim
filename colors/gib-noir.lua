@@ -31,7 +31,6 @@ local c = {
   fg_gutter = "#8787af",    -- Foreground for gutter text.
   fg_highlight = "#e2e2e2", -- Foreground for highlighted text.
   fg_cursearch = "#1c1c1c",
-  fg_endofbuffer = "#585858",
   fg_statuslinenc = "#b2b2b2",
   bg_gutter = "#2e2d2b",         -- Background for gutter text.
   bg_highlight = "#383734",      -- Highlighted text
@@ -94,7 +93,7 @@ local highlights = {
   DiffChange                = { bg = c.diff.change },                       -- diff mode: Unchanged text within a changed line |diff.txt|
   DiffDelete                = { bg = c.diff.delete },                       -- diff mode: Deleted line |diff.txt|
   DiffText                  = { bg = c.diff.text },                         -- diff mode: Changed text within a changed line |diff.txt|
-  EndOfBuffer               = { fg = c.fg_endofbuffer },                    -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+  EndOfBuffer               = { fg = c.non_text },                          -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
   -- TermCursor  = { link = "Cursor" }, -- cursor in a focused terminal
   -- TermCursorNC= {  link = "Cursor" }, -- cursor in an unfocused terminal
   ErrorMsg                  = { fg = c.error, italic = true },                           -- error messages on the command line and LanguageClient inline messages.
