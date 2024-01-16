@@ -59,9 +59,9 @@ local c = {
     text = "#472346",
   },
   gutter_diff = {
-    add = "#062905",
-    change = "#1d3e42",
-    delete = "#3d0c0a",
+    add = "#009900",
+    change = "#bbbb00",
+    delete = "#ff2222",
   },
   warning = "#A56221",
   error = "#B25E79",
