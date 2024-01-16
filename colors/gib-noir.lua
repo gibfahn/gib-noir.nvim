@@ -97,7 +97,7 @@ local highlights = {
   -- TermCursor  = { link = "Cursor" }, -- cursor in a focused terminal
   -- TermCursorNC= {  link = "Cursor" }, -- cursor in an unfocused terminal
   ErrorMsg                  = { fg = c.error, italic = true },                           -- error messages on the command line and LanguageClient inline messages.
-  WinSeparator              = { fg = c.border, bg = c.border },                          -- the column separating vertically split windows
+  WinSeparator              = { fg = c.border, bold = true },                            -- the column separating vertically split windows
   Folded                    = { fg = c.fg_gutter, bg = c.bg_folded },                    -- line used for closed folds
   FoldColumn                = { link = "Folded" },                                       -- 'foldcolumn'
   SignColumn                = { fg = c.comment, bg = c.bg_gutter },                      -- column where |signs| are displayed
