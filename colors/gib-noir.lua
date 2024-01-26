@@ -243,6 +243,8 @@ local highlights = {
   -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
   -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
   -- DiagnosticSignOk           { } , -- Used for "Ok" signs in sign column.
+  -- DiagnosticDeprecated       { } , -- Used for deprecated or obsolete code.
+  DiagnosticUnnecessary = { bg = c.fg_cursearch }, -- Used for unnecessary or unused code, e.g. cfg(linux) Rust code when on macOS.
 
   -- Tree-Sitter syntax groups.
   --
