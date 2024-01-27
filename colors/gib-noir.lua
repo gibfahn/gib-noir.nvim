@@ -95,6 +95,9 @@ local highlights = {
   DiffChange = { bg = c.diff.change }, -- diff mode: Unchanged text within a changed line |diff.txt|
   DiffDelete = { bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
   DiffText = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
+  diffAdded = { fg = c.gutter_diff.add }, -- fugitive diff for added lines
+  diffRemoved = { fg = c.gutter_diff.delete }, -- fugitive diff for removed lines
+  diffChanged = { fg = c.gutter_diff.change }, -- fugitive diff for changed lines
   EndOfBuffer = { fg = c.non_text }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
   -- TermCursor  = { link = "Cursor" }, -- cursor in a focused terminal
   -- TermCursorNC= {  link = "Cursor" }, -- cursor in an unfocused terminal
