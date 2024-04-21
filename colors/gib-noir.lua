@@ -71,6 +71,7 @@ local c = {
   hint = "#8cd991",
   flash_inactive = "#545c7e",
   blue1 = "#2ac3de",
+  todo = "#75d7d8",
 }
 
 local highlights = {
@@ -205,7 +206,7 @@ local highlights = {
   Underlined = { fg = c.non_text, underline = true }, -- Text that stands out, HTML links
   -- Ignore       = { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
   Error = { fg = c.error2, bold = true }, -- Any erroneous construct (and LanguageClient errors)
-  Todo = { fg = "#75d7d8", bold = true }, -- Anything that needs extra attention (and LanguageClient warnings); mostly the keywords TODO FIXME and XXX
+  Todo = { fg = c.todo, bold = true }, -- Anything that needs extra attention (and LanguageClient warnings); mostly the keywords TODO FIXME and XXX
   -- These groups are for the native LSP client and diagnostic system. Some
   -- other LSP clients may use these groups, or use their own. Consult your
   -- LSP client's documentation.
@@ -265,6 +266,64 @@ local highlights = {
   -- sym'@text.literal'
   --
   -- For more information see https://github.com/rktjmp/lush.nvim/issues/109
+
+  -- These groups are for the Neovim tree-sitter highlights.
+  ["@annotation"] = { link = "PreProc" },
+  ["@attribute"] = { link = "PreProc" },
+  ["@boolean"] = { link = "Boolean" },
+  ["@character"] = { link = "Character" },
+  ["@character.special"] = { link = "SpecialChar" },
+  ["@comment"] = { link = "Comment" },
+  ["@keyword.conditional"] = { link = "Conditional" },
+  ["@constant"] = { link = "Constant" },
+  ["@constant.builtin"] = { link = "Special" },
+  ["@constant.macro"] = { link = "Define" },
+  ["@keyword.debug"] = { link = "Debug" },
+  ["@keyword.directive.define"] = { link = "Define" },
+  ["@keyword.exception"] = { link = "Exception" },
+  ["@number.float"] = { link = "Float" },
+  ["@function"] = { link = "Function" },
+  ["@function.builtin"] = { link = "Special" },
+  ["@function.call"] = { link = "@function" },
+  ["@function.macro"] = { link = "Macro" },
+  ["@keyword.import"] = { link = "Include" },
+  ["@keyword.coroutine"] = { link = "@keyword" },
+  ["@keyword.operator"] = { link = "@operator" },
+  ["@keyword.return"] = { link = "@keyword" },
+  ["@function.method"] = { link = "Function" },
+  ["@function.method.call"] = { link = "@function.method" },
+  ["@namespace.builtin"] = { link = "@variable.builtin" },
+  ["@none"] = {},
+  ["@number"] = { link = "Number" },
+  ["@keyword.directive"] = { link = "PreProc" },
+  ["@keyword.repeat"] = { link = "Repeat" },
+  ["@keyword.storage"] = { link = "StorageClass" },
+  ["@string"] = { link = "String" },
+  ["@markup.link.label"] = { link = "SpecialChar" },
+  ["@markup.link.label.symbol"] = { link = "Identifier" },
+  ["@tag"] = { link = "Label" },
+  ["@tag.attribute"] = { link = "@property" },
+  ["@tag.delimiter"] = { link = "Delimiter" },
+  ["@markup"] = { link = "@none" },
+  ["@markup.environment"] = { link = "Macro" },
+  ["@markup.environment.name"] = { link = "Type" },
+  ["@markup.raw"] = { link = "String" },
+  ["@markup.math"] = { link = "Special" },
+  ["@markup.strong"] = { bold = true },
+  ["@markup.emphasis"] = { italic = true },
+  ["@markup.strikethrough"] = { strikethrough = true },
+  ["@markup.underline"] = { underline = true },
+  ["@markup.heading"] = { link = "Title" },
+  ["@comment.note"] = { fg = c.hint },
+  ["@comment.error"] = { fg = c.error },
+  ["@comment.hint"] = { fg = c.hint },
+  ["@comment.info"] = { fg = c.info },
+  ["@comment.warning"] = { fg = c.warning },
+  ["@comment.todo"] = { fg = c.todo },
+  ["@markup.link.url"] = { link = "Underlined" },
+  ["@type"] = { link = "Type" },
+  ["@type.definition"] = { link = "Typedef" },
+  ["@type.qualifier"] = { link = "@keyword" },
 
   -- sym("@text.literal")      { }, -- Comment
   -- sym("@text.reference")    { }, -- Identifier
