@@ -213,7 +213,7 @@ local highlights = {
 
   -- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
   --
-  -- LspReferenceText            { } , -- Used for highlighting "text" references
+  LspReferenceText = { bg = c.bg_dark_highlight }, -- Used for highlighting "text" references
   -- LspReferenceRead            { } , -- Used for highlighting "read" references
   -- LspReferenceWrite           { } , -- Used for highlighting "write" references
   -- LspCodeLens                 { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
