@@ -139,6 +139,7 @@ local highlights = {
   Question = { fg = c.question, bold = true }, -- |hit-enter| prompt and yes/no questions
   QuickFixLine = { bg = c.bg_highlight }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
   Search = { fg = c.search, bold = true }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+  SnippetTabstop = { bg = c.bg_highlight }, -- Things that Tab jumps between for snippet filling.
   SpecialKey = { fg = c.non_text }, -- Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
   SpellBad = { sp = c.error2, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
   SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
