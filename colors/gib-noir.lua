@@ -499,6 +499,9 @@ local highlights = {
   -- IndentBlanklineContextChar = { fg = c.bg_folded, nocombine = true },
   IblIndent = { fg = c.folded, nocombine = true },
   -- IblScope = { fg = c.dark_highlight, nocombine = true },
+
+  -- <https://github.com/MeanderingProgrammer/markdown.nvim.git>
+  RenderMarkdownCode = { bg = c.fg_cursearch },
 }
 
 for group, colors in pairs(highlights) do
