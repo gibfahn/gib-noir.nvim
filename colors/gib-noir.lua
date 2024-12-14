@@ -500,6 +500,10 @@ local highlights = {
   IblIndent = { fg = c.folded, nocombine = true },
   -- IblScope = { fg = c.dark_highlight, nocombine = true },
 
+  -- <https://github.com/folke/snacks.nvim/blob/main/docs/indent.md>
+  SnacksIndentScope = { fg = c.blue1, nocombine = true }, -- Highlighting for the current indent.
+  SnacksIndent = { fg = c.bg_highlight, nocombine = true }, -- Highlighting for other indents.
+
   -- <https://github.com/MeanderingProgrammer/markdown.nvim.git>
   RenderMarkdownCode = { bg = c.fg_cursearch },
 }
